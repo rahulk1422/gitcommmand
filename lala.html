@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & GitHub Commands Cheat Sheet</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #2ea043;
+            --border-color: #30363d;
+            --hover-bg: #1f2428;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--accent-blue);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            color: var(--accent-green);
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .table-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.02);
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: var(--hover-bg);
+        }
+
+        .cmd-box {
+            background-color: rgba(88, 166, 255, 0.1);
+            color: var(--accent-blue);
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            display: inline-block;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+        }
+
+        .source-tag {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background-color: var(--bg-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            th, td { padding: 0.75rem 1rem; }
+            .cmd-box { font-size: 0.85rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Git & GitHub Commands</h1>
+        <p>Your ultimate cheat sheet for version control</p>
+    </header>
+
+    <h2 class="section-title">📦 Basic Git Commands</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th width="30%">Command</th>
+                    <th width="50%">Description</th>
+                    <th width="20%">Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="cmd-box">git init</span></td>
+                    <td>Initializes a local Git repository.</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">git clone [url]</span></td>
+                    <td>Creates a local copy of a remote repository.</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">git status</span></td>
+                    <td>Shows the status of changes (untracked, modified, or staged).</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">git add [file]</span></td>
+                    <td>Stages a specific file for the next commit.</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">git add .</span></td>
+                    <td>Stages all new and modified files in the current directory.</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">git commit -m "[message]"</span></td>
+                    <td>Records the staged snapshots permanently in version history.</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">git pull</span></td>
+                    <td>Updates local branch with new commits from remote.</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">git push</span></td>
+                    <td>Uploads local commits to the remote repository.</td>
+                    <td><span class="source-tag">GitHub Docs</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 class="section-title">🔀 Branching and Merging</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th width="30%">Command</th>
+                    <th width="50%">Description</th>
+                    <th width="20%">Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="cmd-box">git branch</span></td>
+                    <td>Lists all local branches.</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">git branch [name]</span></td>
+                    <td>Creates a new branch.</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">git checkout [name]</span></td>
+                    <td>Switches to a branch.</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">git checkout -b [name]</span></td>
+                    <td>Creates and switches to a new branch.</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">git merge [branch]</span></td>
+                    <td>Merges a branch into current branch.</td>
+                    <td><span class="source-tag">GitHub Guides</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 class="section-title">💻 GitHub CLI Commands</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th width="30%">Command</th>
+                    <th width="50%">Description</th>
+                    <th width="20%">Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="cmd-box">gh repo create</span></td>
+                    <td>Initializes a new GitHub repository.</td>
+                    <td><span class="source-tag">GitHub CLI</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">gh pr status</span></td>
+                    <td>Checks status of pull requests.</td>
+                    <td><span class="source-tag">GitHub CLI</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">gh pr create</span></td>
+                    <td>Creates a new pull request.</td>
+                    <td><span class="source-tag">GitHub CLI</span></td>
+                </tr>
+                <tr>
+                    <td><span class="cmd-box">gh issue list</span></td>
+                    <td>Lists open issues.</td>
+                    <td><span class="source-tag">GitHub CLI</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
